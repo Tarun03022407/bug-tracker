@@ -61,7 +61,7 @@ bugRouter.delete("/delete/:id", async (req, res) => {
     if (useridrequesting !== useridpost) {
       res.send({ msg: "you are not authorized" });
     } else {
-      await PostModel.findByIdAndDelete({ _id: id });
+      await BugModel.findByIdAndDelete({ _id: id });
       res.send("updated the post");
     }
   } catch (error) {
